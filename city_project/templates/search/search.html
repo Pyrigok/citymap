@@ -1,0 +1,75 @@
+{% extends 'home_app/base.html' %}
+{% load static %}
+{% load leaflet_tags %}
+
+{% block body_block %}
+
+
+{% leaflet_js %}
+{% leaflet_css %}
+<link href="{% static 'search_style.css' %}" rel="stylesheet" type="text/css" >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{% static 'js/csrf.js' %}"></script>
+<script src="{% static 'js/autocomplete.js' %}"></script>
+<script src="{% static 'js/ajax_obj_list.js' %}"></script>
+<div class="container">
+    <div class="row">
+        <h1 class="text-center">Search</h1> <hr>
+            <div class="row" id="search-container">
+                <div class="col-md-5">
+                    <div class="row row_gap">
+                        <div class="form-group">
+                            <select class="form-control" id="category">
+                                <option>Hotels</option>
+                                <option>Restaurant</option>
+                            </select>
+                        </div>
+                        <script src="{% static 'js/search.js' %}"></script>
+                        
+                    </div>
+                    <form method='post' autocomplete="off">
+                        {% csrf_token %}
+                        <div id="type_change">
+                            {% for field in form.visible_fields %}
+                            <div class="row row_gap hotels" id="type_change">
+                                <div class="form-group">
+                                    <!-- {{ hotel.as_p }} -->
+                                    <div class="col-md-5">
+                                        {{ field.label_tag }}
+                                    </div>
+                                    <div class="col-md-7">
+                                        {{ field }}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="row text-center">
+                            <button type="submit" class="btn_without_frame" value="search">Search</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-md-7" style="text-align: center;">
+                    <div id="map">
+                        {% leaflet_map "map" callback="window.map_init_basic" %}
+                    </div>
+                    <script src="{% static 'js/get_pos.js' %}"></script>
+                    <button onclick="getLocation()">Get current position</button>
+
+                {% for place in model %}
+                    <script src="{% static 'js/map_marker.js' %}"></script>
+                    <script>
+                        var name = "{{ place.hotel__name }}";
+                        var latitude = "{{ place.latitude }}";
+                        var longitude = "{{ place.longitude }}"
+                        AddMarker(latitude, longitude, name, $("#category").val())
+                    </script>
+                {% endfor %}
+                </div>
+            </div>
+    </div>
+</div>
+{% endblock %}
+
+

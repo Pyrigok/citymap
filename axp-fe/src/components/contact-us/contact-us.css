@@ -1,0 +1,33 @@
+.main_font, label, a, p, h1, h2, h3, h4, h5, h6{
+    font-family: "Open Sans", sans-serif;
+}
+
+/*
+form label {
+    font-weight: 100;
+    color: #6D7993;
+    font-size: 16px;
+    color: black;
+    opacity: 0.8;
+ }
+*/
+
+.contact-us-form input, textarea{
+    width: 600px;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    background-color: transparent;
+    color: black;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid #6D7993;
+    margin-top: 10px;
+}
+
+
+.contact-us-form input:focus, textarea:focus{
+    border: none;
+    border-bottom: 1px solid #1cbbb4;
+    outline: none;
+}

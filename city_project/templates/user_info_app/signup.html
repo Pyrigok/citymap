@@ -1,0 +1,52 @@
+{% extends 'home_app/base.html' %}
+{% load static %}
+{% block body_block %}
+
+
+<h2 class="login_head">Sign up</h2>
+    
+<div style="color: red;">
+    {% if error %}
+        {{ error }}
+    {% endif %}
+</div>
+    
+<p> {{ password_check }} </p>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="login_block">
+        <label class="login_labels" for="{{ form.username.id_for_label }}">Username:</label>
+        <label class="login_labels" for="{{ form.first_name.id_for_label }}">First Name:</label>
+        <label class="login_labels" for="{{ form.last_name.id_for_label }}">Last Name:</label>
+        <label class="login_labels" for="{{ form.email.id_for_label }}">Email:</label>
+        <label class="login_labels" for="{{ form.password.id_for_label }}">Password:</label>
+        <label class="login_labels" for="{{ form.password2.id_for_label }}">Password:</label>
+    </div>
+    <div class="login_block">
+        <input type="text" class="login_input " name="{{ form.username.name }}" id="{{ form.username.id_for_label }}"
+               >
+        <input type="text" class="login_input" name="{{ form.first_name.name }}"
+               id="{{ form.first_name.id_for_label }}" >
+        <input type="text" class="login_input" name="{{ form.last_name.name }}"
+               id="{{ form.last_name.id_for_label }}" >
+        <input type="email" class="login_input" name="{{ form.email.name }}" id="{{ form.email.id_for_label }}"
+               >
+        <input type="password" class="login_input" name="{{ form.password.name }}"
+               id="{{ form.password.id_for_label }}" >
+        <input type="password" class="login_input" name="{{ form.password2.name }}"
+               id="{{ form.password2.id_for_label }}" >
+    </div>
+    <div class="login_block2">
+        <div class="bubble">
+            <label for="{{ form.prof_form.id_for_label }}">Add рhoto:)</label>
+        </div>
+        <img id="user_photo" src="/static/img/user.jpg" alt="your image" class="user_img"/>
+        <input type='file' onchange="readURL(this);" name="{{ form.prof_form.name }}"
+               id="{{ form.prof_form.id_for_label }}" accept=".jpg, .jpeg, .png" class="input_txt"/>
+    </div>
+    <div>
+        <button type="submit" value="Submit" class="btnl">Sign Up</button>
+    </div>
+</form>
+<script src="{% static 'js/add_photo.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% block body_block %}
+    {% for field in form.visible_fields %}
+    <div class="row row_gap hotels">
+        <div class="form-group">
+            <div class="col-sm-5">
+                {{ field.label_tag }}
+            </div>
+            <div class="col-sm-7">
+                {{ field }}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

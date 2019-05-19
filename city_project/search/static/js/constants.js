@@ -1,0 +1,1 @@
+// Please move all constant variables into this file

@@ -1,0 +1,44 @@
+{% extends 'home_app/base.html' %}
+{% load static %}
+{% load leaflet_tags %}
+
+{% block body_block %}
+
+<!-- MAP INIT CONFIGURATION -->
+{% leaflet_js %}
+{% leaflet_css %}
+<script src="{% static 'js/map_marker.js' %}"></script>
+<!-- END MAP INIT CONF -->
+<div class="main-container">
+    <h1 class="text-center">Search Result</h1> 
+    <div id="map" style="width: 1300px; height: 70vh; margin: 20px 16px 100px 16px">
+        {% leaflet_map "map" callback="window.map_init_basic" %}
+    </div>
+    <div style="margin: 0 16px; padding-left: 5px; padding-top: 5px">
+        <h1 class="text-center" style="margin: 20px 0">Information about searched places</h3>
+        {% for field in category %}
+        <div class="list-result col-md-4" style="height: 400px">
+            <img style="height: 300px; width: 350px" src="{{field.img_url}}" alt="obj_image"/>
+            <p style="display: inline-block"><a href="/places/result/{{hotel.id}}">{{field.name}}</a><br>Address:
+                {{field.address_raw_line}}<br>Phone: {{field.phone}}<br>Email: {{field.website}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+        {% for items in coordinates %}
+        <script>
+            {% if items.hotel__name is not None %}
+            var name = "{{ items.hotel__name }}";
+            var category = 'Hotel'
+            {% endif %}
+            {% if items.foodplace__name is not None %}
+            var name = "{{ items.foodplace__name }}";
+            var category = 'Restaurant'
+            {% endif %}
+            var latitude = "{{ items.latitude }}";
+            var longitude = "{{ items.longitude }}"
+            AddMarker(latitude, longitude, name, category)
+        </script>
+        {% endfor %}
+
+{% endblock %}

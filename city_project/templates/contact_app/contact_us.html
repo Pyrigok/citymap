@@ -1,0 +1,38 @@
+{% extends 'home_app/base.html' %}
+{% load static %}
+
+{% block body_block %}
+
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3 text-center">
+			<h1>Write Us <hr></h1>
+		</div>
+	</div>
+
+	<div class="row">
+	    <div class="col-md-4 col-md-offset-4">
+	        {% if request.GET.status_message %}
+	        <div class="alert alert-warning">
+	            <p class="text-center">{{request.GET.status_message }}</p>
+	        </div>
+	        {% endif %}
+	    </div>
+	</div>
+
+ <div class="row">
+
+        <div class="col-md-6 col-md-offset-3">
+            <form action='{% url "contact_app:contact-us" %}'
+            method='post' enctype='multipart/form-data'>
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+				<div class="col-md-3 col-md-offset-6">
+                	<button class="btn_without_frame" type="submit" name='submit'>Send</button>
+
+                	<a class="btn_without_frame_link" href="{% url 'home_app:home' %}" class="btn_without_frame">Cancel</a>
+				</div>
+            </form>
+        </div>
+{% endblock body_block %}

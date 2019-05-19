@@ -1,0 +1,24 @@
+{% extends 'home_app/base.html' %}
+{% load static %}
+
+{% block body_block %}
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">Map out your new place</h1> <hr>
+            </div>
+            <div class="col-md-6">
+                <div class="text-left">
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="{% url 'places:add_place_hotel' %}">Hotel</a></li>
+                        <li class="list-group-item"><a href="{% url 'places:add_place_foodplace' %}">Restaurant</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+{% endblock %}
+

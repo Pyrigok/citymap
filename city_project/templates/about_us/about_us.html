@@ -1,0 +1,62 @@
+{% extends 'home_app/base.html' %}
+{% load static %}
+
+{% block body_block %}
+<!-- Main part -->
+<article class="main-part">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">About Us
+                    <hr>
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <figure class="img">
+                    <img src=" {% static 'img/python-full-team.jpg' %} " class="img-responsive img-thumbnail"
+                         alt="Our team of developers">
+                </figure>
+            </div>
+            <div class="col-md-4">
+                <p class="text-center team-members">
+                    <strong>Team Lead:</strong>
+                    <br>
+                    Yura Pyrko
+                    <br>
+                    <br>
+                    <strong>Young Pythonistas:</strong> <br>
+                <div class="col-md-6 text-right">Anastasia</div>
+                <div class="col-md-6 text-left">Kovalyshyn</div>
+                <br>
+                <div class="col-md-6 text-right">Oleksii</div>
+                <div class="col-md-6 text-left">Maksymiv</div>
+                <br>
+                <div class="col-md-6 text-right">Yuriy</div>
+                <div class="col-md-6 text-left">Dudyshyn</div>
+                <br>
+                <div class="col-md-6 text-right">Danylo</div>
+                <div class="col-md-6 text-left">Horyk</div>
+                <br>
+                <div class="col-md-6 text-right">Ivan</div>
+                <div class="col-md-6 text-left">Prytula</div>
+                <br>
+                <div class="col-md-6 text-right">Vasyl</div>
+                <div class="col-md-6 text-left">Pyrig</div>
+                <br>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <figure class="video">
+                    <video width=100% height=auto controls>
+                        <source src=" {% static 'video/py-team-720p-15s.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </figure>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- END of Main part -->
+{% endblock %}

@@ -1,0 +1,27 @@
+.update-user-form input, textarea{
+    width: 300px;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    background-color: transparent;
+    color: black;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid #6D7993;
+    margin-top: 10px;
+}
+
+
+.update-user-form input:focus, textarea:focus{
+    border: none;
+    border-bottom: 1px solid #1cbbb4;
+    outline: none;
+}
+
+.btn_saved_places{
+    display: inline;
+    color: #6D7993;
+    background-color: transparent;
+    border: none;
+    font: 30px "Pacifico", cursive;
+}

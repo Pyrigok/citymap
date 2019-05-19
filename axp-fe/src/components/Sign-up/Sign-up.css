@@ -1,0 +1,83 @@
+.login_block input{
+    display: block;
+    height: 35px;
+    margin: 13px 0;
+    border: none;
+    border-bottom: solid 1px;
+    border-bottom-color: gray;
+}
+
+.login_head{
+    text-align: center;
+}
+
+.login_block2 {
+    display: inline-block;
+    margin: 0 100px;
+}
+.user_img {
+    width: 200px;
+    height: 200px;
+}
+
+.bubble
+{
+    position: relative;
+    width: 112px;
+    height: 64px;
+    padding: 12px;
+    background: #FFFFFF;
+    -webkit-border-radius: 27px;
+    -moz-border-radius: 27px;
+    border-radius: 20px;
+    border: #7F7F7F solid 2px;
+    top: 48px;
+    left: 220px;
+}
+
+.bubble:after
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 12px 15px 0px 0;
+    border-color: transparent #FFFFFF;
+    display: block;
+    width: 0;
+    z-index: 1;
+    left: -15px;
+    top: 28px;
+}
+
+.bubble:before
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 17px 18px 1px 0;
+    border-color: transparent #7F7F7F;
+    display: block;
+    width: 0;
+    z-index: 0;
+    left: -19px;
+    top: 25px;
+}
+
+.input_txt{
+    color: #FFFFFF;
+    border: none;
+}
+
+.input_txt::-webkit-file-upload-button{
+    margin: 0 30px;
+    color: #6D7993;
+    background-color: transparent;
+    border: none;
+    font: 20px "Pacifico", cursive;
+    padding: 10px;
+}
+
+.input_txt::-webkit-file-upload-button:hover{
+    color: black;
+    outline: none;
+}

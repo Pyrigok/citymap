@@ -1,0 +1,35 @@
+/* change language button */
+.languageButton {
+    color: #6D7993;
+    background-color: transparent;
+    border-radius: 5px;
+    font: 20px "Open sans";
+}
+
+.languageButton:hover {
+    opacity: 0.7;
+    color: #1cbbb4;
+    outline: none;
+}
+
+.languageButton:active {
+    outline: none;
+    color: white;
+    background-color: #6D7993;
+    text-decoration: none;
+}
+
+#language-buttons {
+    position: relative;
+    list-style: none;
+    font-weight: 400;
+    font-size: 0;
+    text-transform: uppercase;
+    /*display: inline-block;*/
+    padding: 0;
+    margin: 50px auto;
+}
+
+/*#languageDiv {*/
+/*position:*/
+/*}*/

@@ -1,0 +1,37 @@
+{% extends 'home_app/base.html' %}
+{% load leaflet_tags %}
+
+{% load static %}
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+{% block body_block %}
+
+<head>
+    {% leaflet_js %}
+    {% leaflet_css %}
+</head>
+<script src="{% static 'js/get_pos.js' %}"></script>
+<div class="container">
+    <div class="row">
+    </div>
+    <h2>Restaurant search</h2>
+    <p id="demo">Click the button to get nearest restaurants:</p>
+
+        <!-- {% csrf_token %} -->
+    <button onclick="getLocation()" type="submit" method="post">Try It</button>
+
+    <div id="mapholder">
+        {% leaflet_map "map" callback="window.map_init_basic" %}
+    </div>
+    {% for place in food %}
+        <script>
+            var rest_name = "{{ place.name }}";
+            var latitude = "{{ place.latitude }}";
+            var longitude = "{{ place.longitude }}"
+            AddMarker(latitude, longitude, rest_name)
+        </script>
+    {% endfor %}
+</div>
+
+{% endblock %}

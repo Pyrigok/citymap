@@ -1,0 +1,32 @@
+{% extends 'home_app/base.html' %}
+{% load static %}
+
+{% block body_block %}
+    {% if user.is_authenticated %}
+        <div class="row">
+            <div class="col-md-4 col-md-offset-2">
+                <h3>Profile Page! <hr></h3>
+                {% for entry in user_info %}
+                    <p>{{ entry.username }}</p>
+                    <p>{{ entry.first_name }}</p>
+                    <p>{{ entry.last_name }}</p>
+                    <p>{{ entry.email }}</p>
+                {% endfor %}
+
+            </div>
+
+            <div class="col-md-4">
+                <h3>Saved Places! <hr> </h3>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 col-md-offset-4">
+                <a href="{% url 'user_info_app:update_user' pk=user.id %}" class="btn_without_frame_link">Update Info</a>
+                
+            </div>
+        </div>
+
+    {% endif %}
+{% endblock body_block %}

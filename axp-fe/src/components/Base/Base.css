@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300|Tangerine");
+@import url("https://fonts.googleapis.com/css?family=Pacifico&subset=cyrillic");
+
+html {
+    position: relative;
+}
+
+body {
+    overflow-x: hidden;
+    margin-bottom: 150px;
+    min-height: 80vh;
+    /* Margin bottom by footer height */
+}
+
+.main_font, label, a, p, h1, h2, h3, h4, h5, h6{
+    font-family: "Open Sans", sans-serif;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    text-decoration: none;
+}
+
+input:focus + label {
+    color: #1cbbb4;
+}
+
+textarea:focus + label {
+    color: #1cbbb4;
+}
+
+.top1-wrapper .top1-brand {
+    font-size: 2.5em;
+    color: #6D7993;
+}
+
+
+.top2-menu {
+    margin-bottom: 15px;
+}
+
+.top2-menu > li {
+    color: #6D7993;
+}
+
+.top2-menu > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    color: #6D7993;
+    font-size: 1.5em;
+}
+
+.top2-menu > li > a:hover,
+.top2-menu > li > a:focus {
+    text-decoration: none;
+    color: #96858F;
+    background-color: transparent;
+}
+
+.top2-menu > li > a:hover,
+.top2-menu > li > a:focus {
+    text-decoration: none;
+    color: #1cbbb4;
+    background-color: transparent;
+}
+
+
+/* all buttons */
+.btn_without_frame {
+    display: inline;
+    color: #6D7993;
+    background-color: transparent;
+    border-radius: 5px;
+    font: 20px "Open Sans", cursive;
+}
+
+.btn_without_frame:hover {
+    color: #1cbbb4;
+    outline: none;
+}
+
+.btn_without_frame:active {
+    outline: none;
+    color: white;
+    background-color: #6D7993;
+    text-decoration: none;
+}
+
+.btn_without_frame_link {
+
+    display: inline;
+    color: black;
+    background-color: transparent;
+    border: none;
+    font: 20px "Pacifico", cursive;
+    font-style: italic;
+}
+
+.btn_without_frame_link:hover {
+    outline: none;
+    text-decoration: none;
+}
+
+.btn_without_frame_link:active {
+    outline: none;
+    text-decoration: none;
+}
+
+/*----------------------MENU--------------------------------------------*/
+#main {
+    position: relative;
+    list-style: none;
+    font-weight: 400;
+    font-size: 0;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0;
+    margin: 30px auto;
+}
+
+#main li {
+    font-size: 1.3rem;
+    display: inline-block;
+    position: relative;
+    padding: 15px 18px;
+    cursor: pointer;
+    z-index: 5;
+    min-width: 120px;
+}
+
+li, li:hover {
+    margin: 0;
+}
+
+.drop {
+    overflow: hidden;
+    list-style: none;
+    position: absolute;
+    padding: 0;
+    width: 100%;
+    left: 0;
+    top: 48px;
+}
+
+.drop div {
+    -webkit-transform: translate(0, -100%);
+    -moz-transform: translate(0, -100%);
+    -ms-transform: translate(0, -100%);
+    transform: translate(0, -100%);
+    -webkit-transition: all 0.5s 0.1s;
+    -moz-transition: all 0.5s 0.1s;
+    -ms-transition: all 0.5s 0.1s;
+    transition: all 0.5s 0.1s;
+    position: relative;
+    padding-top: 30px;
+}
+
+
+.drop li {
+    display: block;
+    padding: 0;
+    width: 100%;
+}
+
+.drop-li {
+    background: #ffffff;
+}
+
+#marker {
+    height: 6px;
+    position: absolute;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    -ms-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+#main li:nth-child(1):hover ul div {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+#main li:nth-child(1):hover ~ #marker {
+    background: #6D7993 !important;
+    -webkit-transform: translate(15px, 0);
+    -moz-transform: translate(15px, 0);
+    -ms-transform: translate(15px, 0);
+    transform: translate(15px, 0);
+}
+
+#main li:nth-child(2):hover ul div {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+#main li:nth-child(2):hover ~ #marker {
+    background: #6D7993 !important;
+    -webkit-transform: translate(170px, 0);
+    -moz-transform: translate(170px, 0);
+    -ms-transform: translate(170px, 0);
+    transform: translate(170px, 0);
+}
+
+#main li:nth-child(3):hover ul div {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+#main li:nth-child(3):hover ~ #marker {
+    background: #6D7993 !important;
+    -webkit-transform: translate(315px, 0);
+    -moz-transform: translate(315px, 0);
+    -ms-transform: translate(315px, 0);
+    transform: translate(315px, 0);
+}
+
+#main li:nth-child(4):hover ul div {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+#main li:nth-child(4):hover ~ #marker {
+    background: #6D7993 !important;
+    -webkit-transform: translate(475px, 0);
+    -moz-transform: translate(475px, 0);
+    -ms-transform: translate(475px, 0);
+    transform: translate(475px, 0);
+}
+
+#main li:nth-child(5):hover ul div {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+#main li:nth-child(5):hover ~ #marker {
+    background: #6D7993 !important;
+    -webkit-transform: translate(695px, 0);
+    -moz-transform: translate(695px, 0);
+    -ms-transform: translate(695px, 0);
+    transform: translate(695px, 0);
+}
+
+/*???*/
+/*
+#main li:hover .drop li:first-of-type {
+  animation: drop 0.3s ease-in-out forwards;
+  animation-delay: 0.3s;
+}
+
+#main li:hover .drop li:nth-of-type(2) {
+  animation: drop 0.3s ease-in-out forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes drop {
+  from {
+    opacity: 0;
+    transform: translateX(30px) rotateY(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateY(0);
+  }
+}
+*/
+
+
+/*----------------------FOOTER--------------------------------------------*/
+.bottom-wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    /* Set the fixed height of the footer here */
+    background-color: #f3f0f0;
+}
+
+.bottom-wrapper .list-inline {
+    margin-top: 10px;
+}
+
+.copyright-text {
+    font-size: 1.1em;
+    margin: 0;
+    font-color: #6D7993;
+}
+
+
+
+
+
+
+
+
+

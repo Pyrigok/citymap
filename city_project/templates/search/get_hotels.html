@@ -1,0 +1,42 @@
+<!--maps js api key:AIzaSyAq5V59WWSG893ehauHqj5k_LLZN3F-6zA -->
+{% extends 'home_app/base.html' %}
+{% block body_block %}
+
+{%if selected != None %}
+    <div class="row">
+        <div class="col-md-6 col-md-offset-4">
+            <h4>Name: {{selected.name}}</h4>
+            <h4>Location: {{selected.geo_location}}</h4>
+            <h4>Place id: {{selected.place_id}}</h4>
+        </div>
+    </div>
+
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var point = {lat: {{cordinates.0}}, lng: {{cordinates.1}}};
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 18, center: point});
+        var marker = new google.maps.Marker({position: point, map: map});
+
+      }
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAq5V59WWSG893ehauHqj5k_LLZN3F-6zA&callback=initMap">
+    </script>
+
+{%endif%}
+
+<div class="list-group">
+{%for place in places%}
+  <a href="{% url 'search:get_hotels' place.place_id %}" class="list-group-item">{{place.name}}</a>
+{%endfor%}
+</div>
+
+
+
+
+
+
+{% endblock body_block %}

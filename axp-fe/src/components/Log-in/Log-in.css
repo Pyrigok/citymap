@@ -1,0 +1,48 @@
+.horizontal_line {
+    border-right: 2px solid black;
+}
+
+.soc_but {
+    border-radius: 0;
+    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #263961;
+    padding: 10px 30px;
+}
+
+.facebook {
+    background: #3B5998;
+}
+
+.google {
+    background: #c32f10;
+}
+
+.row_gap {
+    margin: 10px auto;
+}
+
+.icon_spacing {
+    margin: 10px 20px;
+}
+
+.login-form input, textarea{
+  width: 300px;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  background-color: transparent;
+  color: black;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid #6D7993;
+  margin-top: 10px;
+}
+
+
+.login-form input:focus, textarea:focus{
+    border: none;
+    border-bottom: 1px solid #1cbbb4;
+    outline: none;
+}
